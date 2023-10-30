@@ -1,0 +1,58 @@
+<div *ngIf = "selectedTable" class="popover">
+    <img src="{{selectedTable.imgURL}}" alt="Table Image" class="table-banner">
+    <div class="table-info">
+      <h2>Table {{ selectedTable.number }}</h2>
+      <p>Seats: {{ selectedTable.seats }}</p>
+    </div>
+    <div class="time-selection">
+      <button [ngClass]=
+      "{    'time-button-disabled' : selectedTable.timeIsReserved.four,
+            'time-button-active': !selectedTable.timeIsReserved.four,
+            'selected': selectedTime === 'four' && !selectedTable.timeIsReserved.four,
+        }" 
+    [disabled]="selectedTable.timeIsReserved.four" 
+    (click)="selectTime('four')">4-5</button>
+
+    <button [ngClass]=
+    "{    'time-button-disabled' : selectedTable.timeIsReserved.five,
+          'time-button-active': !selectedTable.timeIsReserved.five,
+          'selected': selectedTime === 'five' && !selectedTable.timeIsReserved.five,
+      }" 
+  [disabled]="selectedTable.timeIsReserved.five" 
+  (click)="selectTime('five')">5-6</button>
+
+  <button [ngClass]=
+      "{    'time-button-disabled' : selectedTable.timeIsReserved.six,
+            'time-button-active': !selectedTable.timeIsReserved.six,
+            'selected': selectedTime === 'six' && !selectedTable.timeIsReserved.six,
+        }" 
+    [disabled]="selectedTable.timeIsReserved.six" 
+    (click)="selectTime('six')">6-7</button>
+
+    <button [ngClass]=
+      "{    'time-button-disabled' : selectedTable.timeIsReserved.seven,
+            'time-button-active': !selectedTable.timeIsReserved.seven,
+            'selected': selectedTime === 'seven' && !selectedTable.timeIsReserved.seven,
+        }" 
+    [disabled]="selectedTable.timeIsReserved.seven" 
+    (click)="selectTime('seven')">7-8</button>
+
+    <button [ngClass]=
+      "{    'time-button-disabled' : selectedTable.timeIsReserved.eight,
+            'time-button-active': !selectedTable.timeIsReserved.eight,
+            'selected': selectedTime === 'eight' && !selectedTable.timeIsReserved.eight,
+        }" 
+    [disabled]="selectedTable.timeIsReserved.eight" 
+    (click)="selectTime('eight')">8-9</button>
+
+    <button [ngClass]=
+      "{    'time-button-disabled' : selectedTable.timeIsReserved.nine,
+            'time-button-active': !selectedTable.timeIsReserved.nine,
+            'selected': selectedTime === 'nine' && !selectedTable.timeIsReserved.nine,
+        }" 
+    [disabled]="selectedTable.timeIsReserved.nine" 
+    (click)="selectTime('nine')">9-10</button>
+
+    </div>
+    <button class="reserve-btn" (click) = reserveButtonClick()>Reserve</button>
+  </div>

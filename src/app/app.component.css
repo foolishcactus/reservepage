@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+#sectionone{
+    flex: 2;
+}
+
+body{
+    background-color: #f0f0f0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+  padding-left: 50px;
+  
+}
+
+.content-wrapper.shifted {
+    transform: translateX(-250px); /* Push the content to the left */
+}
+
+.content-wrapper {
+    transition: 0.3s;
+}
+
+.sidebar-menu {
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially placed off-screen on the right */
+    transition: 0.3s;
+    z-index: 1000; /* Ensure the sidebar is above other content */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-menu a {
+    display: block;
+    font-size: 20px; /* adjust based on your design */
+    margin: 8px 0;  /* control the vertical spacing */
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    color: goldenrod; /* hover effect */
+}
+
+.sidebar-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: goldenrod;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease; /* Adjust speed as necessary */
+}
+
+.sidebar-menu a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.sidebar-menu.open {
+    right: 0; /* Shift to visible position when opened */
+}
+
+.reserve-landing-container{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 3;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  /* This adds a black overlay with 50% opacity */
+    url('https://images.wallpaperscraft.com/image/single/evening_table_dinner_48367_3840x2160.jpg');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    display: flex; /* Uses flexbox to center the content both vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Adjust text size as needed */
+    margin: 0 auto;
+}
+
+.reserve-landing-container p {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    border-radius: 5px; /* Gives the background a slightly rounded corner */
+    color:#daa520;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item {
+    margin: 0 15px;
+    text-decoration: none;
+    color: goldenrod;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    transition: transform 0.3s, font-size 0.3s;  /* smooth transformation */
+}
+
+.nav-item.logo img {
+    height: 100px; /* or whatever size you want for the logo */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.nav-item:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;  /* thickness of the underline */
+  background-color: #daa520;  /* example underline color */
+  transform: scaleX(0);  /* initially the underline is not visible */
+  transition: transform 0.3s;  /* smooth transformation */
+  transform-origin: right;
+}
+
+.nav-item:hover {
+  font-size: 1.1em;  /* grow effect */
+  transform: translateY(-5px);  /* gives a subtle upward motion */
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);  /* full underline on hover */
+  transform-origin: left;
+}
+
+.toggle{
+    height: 2vh;
+}
+
+.logo{
+    height: 20vh;
+}
+
+.componentswrapper{
+    display: flex; /* Use Flexbox for side-by-side layout */
+    height: 700px;
+}
+
+.transparent {
+    background-color: transparent;
+  }
+  
+.colored {
+    background-color: #333; /* e.g., #333, rgba(0,0,0,0.9) */
+}
+
+
+

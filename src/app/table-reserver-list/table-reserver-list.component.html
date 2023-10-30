@@ -1,0 +1,44 @@
+
+    <div class="search-bar">
+        <label>Number of Guests:
+            <select [(ngModel)]="numberOfGuests">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="10">10</option>
+              </select>
+        </label>
+      
+        <label>Time:
+          <select [(ngModel)]="reservationTime">
+            <option value="">No Preference</option>
+            <option value="four">4:00 PM</option>
+            <option value="five">5:00 PM</option>
+            <option value="six">6:00 PM</option>
+            <option value="seven">7:00 PM</option>
+            <option value="eight">8:00 PM</option>
+            <option value="nine">9:00 PM</option>
+          </select>
+        </label>
+      
+        <label>Type of Table:
+          <select [(ngModel)]="tableType">
+            <option value="">No Preference</option>
+            <option value="Booth">Booth</option>
+            <option value="Table">Table</option>
+          </select>
+        </label>
+      
+        <button (click)="filterTables()">Search</button>
+    </div>
+    
+
+  <div class="tables-container">
+    <div *ngFor="let table of filteredTables" class="table-card">
+      <img [src]="table.imgURL" alt="Table Image">
+      <p>Table Number: {{table.number}}</p>
+      <p>Seats: {{table.seats}}</p>
+      <p>Type: {{table.type}}</p>
+      <button>Reserve</button>
+    </div>
+  </div>
+
